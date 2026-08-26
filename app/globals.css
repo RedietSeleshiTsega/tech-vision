@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+:root {
+  --tv-green: #2db66d;
+  --tv-green-dark: #0b7d49;
+  --tv-ink: #0c120f;
+  --tv-muted: #68736d;
+  --tv-line: #dce5df;
+  --tv-soft: #f6fbf8;
+  --tv-soft-green: #e9f8ef;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--tv-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+button, input, select, textarea { font: inherit; }
+a { text-decoration: none; }
+
+.tv-mono {
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: .06em;
+}
+
+@keyframes tv-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.tv-fade-up { animation: tv-fade-up .6s ease both; }
