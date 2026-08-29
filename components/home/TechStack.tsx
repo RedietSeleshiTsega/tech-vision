@@ -25,14 +25,22 @@ export function TechStack() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-12 text-center"
         >
+<<<<<<< HEAD
           <div className="mb-4 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-[#00d38d]">
+=======
+          <div className="mb-4 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-[#36ba7a]">
+>>>>>>> 7d0ca9fe500d9c557ea435396fcc1a35f33cf849
             <span className="h-px w-9 bg-[#9aa99f]" />
             Modern Stack
             <span className="h-px w-9 bg-[#9aa99f]" />
           </div>
           <h2 className="text-4xl font-black leading-tight text-[#080d0b] sm:text-5xl lg:text-6xl">
             Learn the Tools{' '}
+<<<<<<< HEAD
             <span className="text-[#00d38d]">Companies Use</span>
+=======
+            <span className="text-[#32b878]">Companies Use</span>
+>>>>>>> 7d0ca9fe500d9c557ea435396fcc1a35f33cf849
           </h2>
         </motion.div>
 
@@ -45,7 +53,11 @@ export function TechStack() {
               animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
               transition={{ delay: 0.1 + i * 0.05, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -8, scale: 1.05 }}
+<<<<<<< HEAD
               className="group relative flex h-[100px] w-[100px] cursor-default flex-col items-center justify-center rounded-2xl border-b-4 border-[#00d38d] bg-[#071a11] shadow-[3px_4px_0_#a6b2ab] transition-all duration-300 sm:h-[96px] sm:w-[96px]"
+=======
+              className="group relative flex h-[100px] w-[100px] cursor-default flex-col items-center justify-center rounded-2xl border-b-4 border-[#00b866] bg-[#071a11] shadow-[3px_4px_0_#a6b2ab] transition-all duration-300 sm:h-[96px] sm:w-[96px]"
+>>>>>>> 7d0ca9fe500d9c557ea435396fcc1a35f33cf849
             >
               {/* Dynamic Glow based on tech color */}
               <div

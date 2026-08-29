@@ -1,4 +1,5 @@
 import Link from 'next/link'
+<<<<<<< HEAD
 import { BrandLogo } from '@/components/BrandLogo'
 
 export default function Login() {
@@ -37,3 +38,8 @@ export default function Login() {
     </main>
   )
 }
+=======
+import { Navbar } from '@/components/home/Navbar'
+
+export default function Login(){return <><Navbar/><main className="min-h-[calc(100vh-76px)] bg-[#f7faf8] px-5 py-16"><section className="mx-auto max-w-xl border border-[#dce5df] bg-white p-8 shadow-[0_18px_50px_rgba(26,55,40,.08)] sm:p-12"><div className="text-center"><h1 className="text-4xl font-black">Welcome back</h1><p className="mt-3 text-sm text-[#6a756e]">Sign in to continue to your TechVision account.</p></div><form className="mt-10 space-y-6"><label className="block text-sm font-bold">Email<input className="mt-2 w-full border border-[#cfd9d3] bg-[#fbfcfb] px-4 py-4 font-normal outline-none focus:border-[#2db66d]" placeholder="Enter your email address" type="email"/></label><label className="block text-sm font-bold">Password<input className="mt-2 w-full border border-[#cfd9d3] bg-[#fbfcfb] px-4 py-4 font-normal outline-none focus:border-[#2db66d]" placeholder="Enter your password" type="password"/></label><div className="flex items-center justify-between text-xs text-[#68736d]"><label className="flex items-center gap-2"><input type="checkbox"/> Remember me</label><a href="#" className="font-semibold text-[#168452]">Forgot password?</a></div><Link href="/dashboard" className="block bg-[#2db66d] py-4 text-center font-bold">Login →</Link></form><p className="mt-8 text-center text-sm text-[#68736d]">Don&apos;t have an account? <Link href="/signup" className="font-bold text-[#168452]">Create one</Link></p></section></main></>}
+>>>>>>> 7d0ca9fe500d9c557ea435396fcc1a35f33cf849

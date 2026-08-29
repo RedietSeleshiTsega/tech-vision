@@ -189,4 +189,8 @@ export function Navbar({ hideCourses = false }: { hideCourses?: boolean }) {
       )}
     </header>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7d0ca9fe500d9c557ea435396fcc1a35f33cf849
