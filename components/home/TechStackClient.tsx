@@ -3,8 +3,20 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
+type Instructor = {
+  instructor?: string
+  full_name?: string
+}
+
 type Course = {
   name: string
+  description?: string | null
+  image?: string | null
+  instructors?: Instructor[]
+}
+
+function getInstructorLabel(instructor: Instructor): string {
+  return instructor.full_name || instructor.instructor || 'Unknown instructor'
 }
 
 export function TechStackClient({ courses }: { courses: Course[] }) {
@@ -32,9 +44,9 @@ export function TechStackClient({ courses }: { courses: Course[] }) {
         </motion.div>
 
         {/* Course Grid */}
-        <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-4 sm:gap-6">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {courses.length === 0 && (
-            <p className="text-sm text-[#4a5a52]">No published courses found.</p>
+            <p className="col-span-full text-sm text-[#4a5a52]">No published courses found.</p>
           )}
 
           {courses.map((course, i) => (
@@ -43,18 +55,43 @@ export function TechStackClient({ courses }: { courses: Course[] }) {
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
               transition={{ delay: 0.1 + i * 0.05, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -8, scale: 1.05 }}
-              className="group relative flex h-[100px] w-[140px] cursor-default flex-col items-center justify-center rounded-2xl border-b-4 border-[#00d38d] bg-[#071a11] px-3 text-center shadow-[3px_4px_0_#a6b2ab] transition-all duration-300 sm:h-[96px] sm:w-[150px]"
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="group relative flex flex-col overflow-hidden rounded-2xl border-b-4 border-[#00d38d] bg-[#071a11] text-left shadow-[3px_4px_0_#a6b2ab] transition-all duration-300"
             >
-              {/* Glow on hover */}
-              <div
-                className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                style={{ background: 'radial-gradient(circle at center, #00d38d20 0%, transparent 70%)' }}
-              />
+              {course.image && (
+                <div className="relative h-36 w-full overflow-hidden">
+                  <img
+                    src={course.image}
+                    alt={course.name}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              )}
 
-              <span className="relative z-10 text-xs font-semibold leading-snug text-[#a7b5ad] transition-colors group-hover:text-white sm:text-sm">
-                {course.name}
-              </span>
+              <div className="relative flex flex-col p-5">
+                {/* Glow on hover */}
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{ background: 'radial-gradient(circle at center, #00d38d20 0%, transparent 70%)' }}
+                />
+
+                <span className="relative z-10 text-base font-bold leading-snug text-white">
+                  {course.name}
+                </span>
+
+                {course.instructors && course.instructors.length > 0 && (
+                  <span className="relative z-10 mt-1 text-xs font-semibold uppercase tracking-wide text-[#00d38d]">
+                    {course.instructors.map(getInstructorLabel).join(', ')}
+                  </span>
+                )}
+
+                {course.description && (
+                 <div
+    className="relative z-10 mt-3 line-clamp-3 text-sm leading-relaxed text-[#a7b5ad] transition-colors group-hover:text-[#d5ded9] [&_p]:m-0"
+    dangerouslySetInnerHTML={{ __html: course.description }}
+  />
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
