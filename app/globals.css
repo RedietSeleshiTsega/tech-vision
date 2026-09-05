@@ -603,3 +603,11 @@ html[data-theme="dark"] .tv-mobile-nav {
 html[data-theme="dark"] .tv-mobile-theme-row {
   border-color: #21404d !important;
 }
+
+.tv-course-title {
+  color: #080d0b;
+}
+
+html[data-theme="dark"] .tv-course-title {
+  color: #ffffff;
+}
