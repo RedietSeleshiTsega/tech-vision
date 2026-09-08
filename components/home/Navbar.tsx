@@ -104,9 +104,9 @@ export function Navbar({ hideCourses = false }: { hideCourses?: boolean }) {
         <div className="hidden items-center gap-3 md:flex">
           <ThemeMenu compact />
 
-          <Link href="/login" className={navLink}>
+          <a href="https://learn.techvision.edu.et" className={navLink}>
             Login
-          </Link>
+          </a>
 
           <Link
             href="/apply"

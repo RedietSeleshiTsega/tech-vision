@@ -26,7 +26,10 @@ export default function Login() {
               <label className="flex items-center gap-2"><input type="checkbox" /> Remember me</label>
               <a href="#" className="font-semibold text-[#168452]">Forgot password?</a>
             </div>
-            <Link href="/dashboard" className="block rounded-md bg-[#00d38d] py-3.5 text-center font-bold text-[#002333] transition hover:bg-[#00bf80]">Login →</Link>
+  
+              <a href="https://learn.techvision.edu.et" className="block rounded-md bg-[#00d38d] py-3.5 text-center font-bold text-[#002333] transition hover:bg-[#00bf80]">
+              Login →
+            </a>
           </form>
 
           <p className="mt-8 text-center text-sm text-[#68736d]">
